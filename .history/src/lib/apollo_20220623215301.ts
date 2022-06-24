@@ -9,4 +9,4 @@ export const client = new ApolloClient({
 
 })
 
-
+Bearer

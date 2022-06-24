@@ -1,4 +1,5 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { meta } from '../.env.local'
 
 export const client = new ApolloClient({
     uri: import.meta.env.VITE_API_URL,
