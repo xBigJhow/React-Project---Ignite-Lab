@@ -49,10 +49,10 @@ export function Lesson(props: LessonProps) {
                         Em Breve
                     </span>
                     )}
-                    <span className={classNames('text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold', {
+                    <span className={classNames('text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold',
                         'border-white': isActiveLesson,
-                        'border-green-300': !isActiveLesson,
-                    })}>
+                        'border-green-300'
+                    )}>
                         {props.type == 'live' ? 'AO VIVO' : 'AULA PRÁTICA'}
                     </span>
                 </header>
