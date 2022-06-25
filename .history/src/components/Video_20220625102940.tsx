@@ -1,6 +1,6 @@
 import { Player, Youtube, DefaultUi } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
-
+import { gql, useQuery } from "@apollo/client";
 
 import '@vime/core/themes/default.css';
 import { useGetLessonBySlugQuery } from "../graphql/generated";

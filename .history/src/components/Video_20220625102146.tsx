@@ -1,23 +1,21 @@
 import { Player, Youtube, DefaultUi } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
-
+import { gql, useQuery } from "@apollo/client";
 
 import '@vime/core/themes/default.css';
-import { useGetLessonBySlugQuery } from "../graphql/generated";
 
 interface VideoProps {
     lessonSlug: string;
 }
 
 export function Video(props: VideoProps) {
-    const { data } = useGetLessonBySlugQuery({
+    const { data } = useGet<GetLessonBySlugResponse>(GET_LESSONS_BY_SLUG_QUERY, {
          variables: {
              slug: props.lessonSlug
-
             }
         })
 
-    if (!data || !data.lesson) {
+    if (!data) {
         return (
             <div className="flex-1">
                 <p>Carregando...</p>
@@ -47,8 +45,7 @@ export function Video(props: VideoProps) {
                         {data.lesson.description}
                         </p>
 
-                   {data.lesson.teacher&& (
-                         <div className="flex items-center gap-4 mt-6">
+                    <div className="flex items-center gap-4 mt-6">
                         <img 
                             className="h-16 w-16 rounded-full border-2 border-blue-500"
                             src={data.lesson.teacher.avatarURL}
@@ -59,7 +56,6 @@ export function Video(props: VideoProps) {
                             <span className="text-gray-200 text-sm block">{data.lesson.teacher.bio}</span>
                         </div>
                     </div>
-                   )}
                 </div>
                     <div className="flex flex-col gap-4">
                         <a href="" className="p-4 text-sm bg-green-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-green-700 transition-colors">

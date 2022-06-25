@@ -1,0 +1,8 @@
+schema: https://api-us-west-2.graphcms.com/v2/cl4okeftf0iqo01w7avrndr95/master
+
+documents: './src/graphql/**/*.graphql'
+
+generates: 
+  ./src//generated.ts:
+    plugins:
+      - typescript
