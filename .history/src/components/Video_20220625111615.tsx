@@ -14,7 +14,9 @@ export function Video(props: VideoProps) {
          variables: {
              slug: props.lessonSlug
             },
-            fetchPolicy: 'no-cache'
+            {
+                console.log()
+            }
         })
 
     if (!data || !data.lesson) {

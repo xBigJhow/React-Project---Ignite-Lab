@@ -12,9 +12,9 @@ interface VideoProps {
 export function Video(props: VideoProps) {
     const { data } = useGetLessonBySlugQuery({
          variables: {
-             slug: props.lessonSlug
-            },
-            fetchPolicy: 'no-cache'
+             slug: props.lessonSlug,
+             fetchPolicy: 'no-cache'
+            }
         })
 
     if (!data || !data.lesson) {

@@ -13,8 +13,10 @@ export function Video(props: VideoProps) {
     const { data } = useGetLessonBySlugQuery({
          variables: {
              slug: props.lessonSlug
-            },
-            fetchPolicy: 'no-cache'
+            } ,
+            {
+                console.log("chama"),
+            }
         })
 
     if (!data || !data.lesson) {
