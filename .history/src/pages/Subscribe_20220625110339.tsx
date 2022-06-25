@@ -68,6 +68,7 @@ export function Subscribe() {
                         
                 </div>
             </div>
+
             <img src={imgUrl} className="mt-10" alt="" />
         </div>
     )
